@@ -133,6 +133,10 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <ProjectReference Include="..\..\Yubaba.Uno.Infrastructures\Yubaba.Uno.Infrastructures.csproj">
+      <Project>{a6149167-6fa7-4e97-87a9-a13d17c43d24}</Project>
+      <Name>Yubaba.Uno.Infrastructures</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Yubaba.Uno.Modules.Main\Yubaba.Uno.Modules.Main.csproj">
       <Project>{e8295193-647a-4dac-a404-2722a5699fc2}</Project>
       <Name>Yubaba.Uno.Modules.Main</Name>

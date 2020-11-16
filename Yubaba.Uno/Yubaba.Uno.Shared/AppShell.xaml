@@ -3,11 +3,24 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:infra="using:Yubaba.Uno.Infrastructures"
     xmlns:local="using:Yubaba.Uno"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="using:Prism.Regions"
     d:DesignHeight="300"
     d:DesignWidth="400"
     mc:Ignorable="d">
 
-    <Grid Background="{StaticResource Background}" />
+    <Grid Background="{StaticResource Background}">
+        <ContentControl
+            Margin="20"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            prism:RegionManager.RegionName="{x:Bind infra:RegionNames.LogRegion}" />
+        <ContentControl
+            Margin="20"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            prism:RegionManager.RegionName="{x:Bind infra:RegionNames.ContractRegion}" />
+    </Grid>
 </UserControl>

@@ -48,6 +48,7 @@
     <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="1.3.4" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Yubaba.Uno.Infrastructures\Yubaba.Uno.Infrastructures.csproj" />
     <ProjectReference Include="..\..\Yubaba.Uno.Modules.Main\Yubaba.Uno.Modules.Main.csproj" />
     <ProjectReference Include="..\..\Yubaba.Uno.Services.Impl\Yubaba.Uno.Services.Impl.csproj" />
     <ProjectReference Include="..\..\Yubaba.Uno.Services\Yubaba.Uno.Services.csproj" />
