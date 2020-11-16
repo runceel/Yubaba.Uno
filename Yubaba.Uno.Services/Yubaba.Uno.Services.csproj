@@ -1,11 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<LangVersion>9.0</LangVersion>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Prism.Core" Version="8.0.0.1909" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Prism.Core" Version="8.0.0.1909" />
+	</ItemGroup>
 
 </Project>

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Prism.Ioc;
 using Prism.Modularity;
+using Prism.Mvvm;
 using Prism.Unity;
 using System;
 using System.Collections.Generic;
@@ -44,7 +45,8 @@ namespace Yubaba.Uno
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             // Register views
-            containerRegistry.RegisterForNavigation<AppShell, AppShellViewModel>();
+            containerRegistry.Register<AppShell>();
+            ViewModelLocationProvider.Register<AppShell, AppShellViewModel>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

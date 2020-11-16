@@ -27,4 +27,8 @@
 		<ProjectReference Include="..\Yubaba.Uno.Services\Yubaba.Uno.Services.csproj" />
 		<ProjectReference Include="..\Yubaba.Uno.Infrastructures\Yubaba.Uno.Infrastructures.csproj" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Views\" />
+	  <Folder Include="ViewModels\" />
+	</ItemGroup>
 </Project>
