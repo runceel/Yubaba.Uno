@@ -13,6 +13,9 @@
     <PackageReference Include="Prism.Unity.Uno">
       <Version>8.0.0.1909</Version>
     </PackageReference>
+    <PackageReference Include="ReactiveProperty">
+      <Version>7.5.1</Version>
+    </PackageReference>
     <PackageReference Include="Uno.Core" Version="2.0.0" />
     <PackageReference Include="Uno.UI" Version="3.2.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
