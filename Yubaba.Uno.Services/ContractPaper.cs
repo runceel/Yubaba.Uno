@@ -1,4 +1,12 @@
 ﻿namespace Yubaba.Uno.Services
 {
-    public record ContractPaper(string SignatureSign);
+    public class ContractPaper
+    {
+        public ContractPaper(string signatureSign)
+        {
+            SignatureSign = signatureSign;
+        }
+
+        public string SignatureSign { get; }
+    }
 }

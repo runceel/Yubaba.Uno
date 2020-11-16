@@ -45,7 +45,6 @@ namespace Yubaba.Uno
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             // Register views
-            containerRegistry.Register<AppShell>();
             ViewModelLocationProvider.Register<AppShell, AppShellViewModel>();
         }
 
