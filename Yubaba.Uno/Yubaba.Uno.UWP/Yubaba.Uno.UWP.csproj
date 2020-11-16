@@ -10,6 +10,9 @@
 			-->
       <Version>6.2.9</Version>
     </PackageReference>
+    <PackageReference Include="Prism.Unity.Uno">
+      <Version>8.0.0.1909</Version>
+    </PackageReference>
     <PackageReference Include="Uno.Core" Version="2.0.0" />
     <PackageReference Include="Uno.UI" Version="3.2.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
@@ -18,7 +21,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>606b73e5-5a70-4ee8-8574-9fcd0c64ca8c</ProjectGuid>
+    <ProjectGuid>{606B73E5-5A70-4EE8-8574-9FCD0C64CA8C}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Yubaba.Uno</RootNamespace>
@@ -127,6 +130,18 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <ProjectReference Include="..\..\Yubaba.Uno.Modules.Main\Yubaba.Uno.Modules.Main.csproj">
+      <Project>{e8295193-647a-4dac-a404-2722a5699fc2}</Project>
+      <Name>Yubaba.Uno.Modules.Main</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Yubaba.Uno.Services.Impl\Yubaba.Uno.Services.Impl.csproj">
+      <Project>{eb8077f4-5b84-492c-aa1e-9ca8f60e9669}</Project>
+      <Name>Yubaba.Uno.Services.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Yubaba.Uno.Services\Yubaba.Uno.Services.csproj">
+      <Project>{1a188d1e-5a40-4839-8e83-8733da767a90}</Project>
+      <Name>Yubaba.Uno.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
