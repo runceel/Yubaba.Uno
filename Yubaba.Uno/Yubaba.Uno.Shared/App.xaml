@@ -5,6 +5,6 @@
     xmlns:local="using:Yubaba.Uno"
     xmlns:prism="using:Prism.Unity">
     <prism:PrismApplication.Resources>
-        <ImageBrush x:Key="Background" ImageSource="ms-appx:///Assets/Background.jpg" />
+        <ImageBrush x:Key="Background" ImageSource="ms-appx:///Assets/Background.jpg" Stretch="UniformToFill" />
     </prism:PrismApplication.Resources>
 </prism:PrismApplication>
