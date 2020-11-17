@@ -16,10 +16,7 @@
             <prismInteractivity:InvokeCommandAction Command="{x:Bind ViewModel.InitCommand}" />
         </core:EventTriggerBehavior>
     </i:Interaction.Behaviors>
-    <Grid>
-        <Button
-            Command="{x:Bind ViewModel.InitCommand}"
-            Content="リセット"
-            Style="{StaticResource TextBlockButtonStyle}" />
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button Command="{x:Bind ViewModel.InitCommand}" Content="リセット" />
     </Grid>
 </UserControl>

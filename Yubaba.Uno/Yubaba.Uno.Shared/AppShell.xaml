@@ -22,7 +22,7 @@
             Padding="10"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            Background="{ThemeResource SystemControlAcrylicElementBrush}">
+            Background="{StaticResource RegionBackgroundBrush}">
             <ContentControl prism:RegionManager.RegionName="{x:Bind infra:RegionNames.CommandRegion}" />
         </Border>
         <Border
@@ -30,7 +30,7 @@
             Padding="10"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="{ThemeResource SystemControlAcrylicElementBrush}">
+            Background="{StaticResource RegionBackgroundBrush}">
             <ContentControl prism:RegionManager.RegionName="{x:Bind infra:RegionNames.LogRegion}" />
         </Border>
         <Border
@@ -38,8 +38,20 @@
             Padding="10"
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
-            Background="{ThemeResource SystemControlAcrylicElementBrush}">
+            Background="{StaticResource RegionBackgroundBrush}">
             <ContentControl prism:RegionManager.RegionName="{x:Bind infra:RegionNames.ContractRegion}" />
+        </Border>
+        <Border
+            Margin="10"
+            Padding="10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Background="{ThemeResource SystemControlAcrylicElementBrush}">
+            <TextBlock Foreground="{ThemeResource SystemAccentColorDark3}" Style="{StaticResource BodyTextBlockStyle}">
+                <Run Text="この湯婆婆の画像は" />
+                <Hyperlink NavigateUri="http://www.ghibli.jp/works/chihiro/">スタジオジブリのサイト</Hyperlink>
+                <Run Text="で配布されているものを使用しています。" />
+            </TextBlock>
         </Border>
     </Grid>
 </UserControl>

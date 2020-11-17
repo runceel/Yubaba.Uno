@@ -10,7 +10,7 @@
     d:DesignWidth="400"
     mc:Ignorable="d">
 
-    <Grid Padding="10">
+    <Grid Padding="10" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ItemsControl ItemsSource="{x:Bind ViewModel.Messages}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate x:DataType="services:Message">
