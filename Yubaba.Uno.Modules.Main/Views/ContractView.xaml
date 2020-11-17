@@ -50,7 +50,7 @@
             Grid.Row="2"
             Grid.Column="1"
             MinWidth="150"
-            Text="{x:Bind ViewModel.SignatureSign.Value, Mode=TwoWay}" />
+            Text="{x:Bind ViewModel.SignatureSign.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         <Button
             Grid.Row="3"
             Grid.ColumnSpan="2"
