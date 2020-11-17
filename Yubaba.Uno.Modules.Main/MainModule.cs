@@ -13,6 +13,7 @@ namespace Yubaba.Uno.Modules.Main
         {
             var regionManager = containerProvider.Resolve<IRegionManager>();
 
+            regionManager.RequestNavigate(RegionNames.CommandRegion, ViewNames.CommandView);
             regionManager.RequestNavigate(RegionNames.LogRegion, ViewNames.MessagesView);
             regionManager.RequestNavigate(RegionNames.ContractRegion, ViewNames.ContractView);
         }
@@ -21,6 +22,7 @@ namespace Yubaba.Uno.Modules.Main
         {
             containerRegistry.RegisterForNavigation<MessagesView, MessagesViewModel>();
             containerRegistry.RegisterForNavigation<ContractView, ContractViewModel>();
+            containerRegistry.RegisterForNavigation<CommandView, CommandViewModel>();
         }
     }
 }

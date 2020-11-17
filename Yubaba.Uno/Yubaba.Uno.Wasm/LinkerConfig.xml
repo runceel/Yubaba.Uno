@@ -1,5 +1,8 @@
 ﻿<linker>
 	<assembly fullname="Yubaba.Uno.Wasm" />
+	<assembly fullname="Yubaba.Uno.Modules.Main" />
+	<assembly fullname="Yubaba.Uno.Services" />
+	<assembly fullname="Yubaba.Uno.Services.Impl" />
 	<assembly fullname="Unity.Container" />
 	<assembly fullname="Unity.Abstractions" />
 	<assembly fullname="Prism.Uno" />

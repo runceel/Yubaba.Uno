@@ -1,0 +1,25 @@
+﻿<UserControl
+    x:Class="Yubaba.Uno.Modules.Main.Views.CommandView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:local="using:Yubaba.Uno.Modules.Main.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prismInteractivity="using:Prism.Interactivity"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    mc:Ignorable="d">
+    <i:Interaction.Behaviors>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <prismInteractivity:InvokeCommandAction Command="{x:Bind ViewModel.InitCommand}" />
+        </core:EventTriggerBehavior>
+    </i:Interaction.Behaviors>
+    <Grid>
+        <Button
+            Command="{x:Bind ViewModel.InitCommand}"
+            Content="リセット"
+            Style="{StaticResource TextBlockButtonStyle}" />
+    </Grid>
+</UserControl>

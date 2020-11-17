@@ -10,5 +10,6 @@ namespace Yubaba.Uno.Infrastructures
     {
         public static string LogRegion { get; } = nameof(LogRegion);
         public static string ContractRegion { get; } = nameof(ContractRegion);
+        public static string CommandRegion { get; } = nameof(CommandRegion);
     }
 }

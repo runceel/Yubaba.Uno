@@ -20,6 +20,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Yubaba.Uno.Modules.Main;
+using Yubaba.Uno.Services;
 using Yubaba.Uno.ViewModels;
 
 namespace Yubaba.Uno
@@ -44,7 +45,10 @@ namespace Yubaba.Uno
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            // Register views
+            // Register services
+            containerRegistry.RegisterSingleton<IYubaba, Services.Impl.Yubaba>();
+
+            // Register shell
             ViewModelLocationProvider.Register<AppShell, AppShellViewModel>();
         }
 

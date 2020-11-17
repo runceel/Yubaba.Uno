@@ -9,7 +9,55 @@
     d:DesignWidth="400"
     mc:Ignorable="d">
 
-    <Grid>
-        <TextBlock Text="ContractView" />
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.ColumnSpan="2"
+            Margin="10"
+            HorizontalAlignment="Center"
+            Foreground="{ThemeResource SystemAccentColor}"
+            Style="{ThemeResource TitleTextBlockStyle}"
+            Text="契約書" />
+
+        <TextBlock
+            Grid.Row="1"
+            Margin="10"
+            VerticalAlignment="Center"
+            Style="{ThemeResource CaptionTextBlockStyle}"
+            Text="甲" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            Style="{ThemeResource BodyTextBlockStyle}"
+            Text="湯屋当主 湯婆婆" />
+        <TextBlock
+            Grid.Row="2"
+            Margin="10"
+            VerticalAlignment="Center"
+            Style="{ThemeResource CaptionTextBlockStyle}"
+            Text="乙" />
+        <TextBox
+            Grid.Row="2"
+            Grid.Column="1"
+            MinWidth="150"
+            Text="{x:Bind ViewModel.SignatureSign.Value, Mode=TwoWay}" />
+        <Button
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            Margin="10"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Command="{x:Bind ViewModel.SubmitCommand}"
+            Content="契約" />
     </Grid>
 </UserControl>

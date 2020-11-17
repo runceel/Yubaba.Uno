@@ -24,10 +24,12 @@
 		<UpToDateCheckInput Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
 	</ItemGroup>
 	<ItemGroup>
+	  <None Remove="Views\CommandView.xaml" />
 	  <None Remove="Views\ContractView.xaml" />
 	  <None Remove="Views\MessagesView.xaml" />
 	</ItemGroup>
 	<ItemGroup>
+	  <UpToDateCheckInput Remove="Views\CommandView.xaml" />
 	  <UpToDateCheckInput Remove="Views\ContractView.xaml" />
 	  <UpToDateCheckInput Remove="Views\MessagesView.xaml" />
 	</ItemGroup>
@@ -36,6 +38,9 @@
 		<ProjectReference Include="..\Yubaba.Uno.Infrastructures\Yubaba.Uno.Infrastructures.csproj" />
 	</ItemGroup>
 	<ItemGroup>
+	  <Page Update="Views\CommandView.xaml">
+	    <SubType>Designer</SubType>
+	  </Page>
 	  <Page Update="Views\ContractView.xaml">
 	    <SubType>Designer</SubType>
 	  </Page>

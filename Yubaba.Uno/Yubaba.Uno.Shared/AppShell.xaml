@@ -11,16 +11,35 @@
     d:DesignWidth="400"
     mc:Ignorable="d">
 
-    <Grid Background="{StaticResource Background}">
-        <ContentControl
-            Margin="20"
+    <Grid>
+        <Image
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Source="ms-appx:///Assets/Background.jpg"
+            Stretch="UniformToFill" />
+        <Border
+            Margin="10"
+            Padding="10"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Background="{ThemeResource SystemControlAcrylicElementBrush}">
+            <ContentControl prism:RegionManager.RegionName="{x:Bind infra:RegionNames.CommandRegion}" />
+        </Border>
+        <Border
+            Margin="10"
+            Padding="10"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            prism:RegionManager.RegionName="{x:Bind infra:RegionNames.LogRegion}" />
-        <ContentControl
-            Margin="20"
+            Background="{ThemeResource SystemControlAcrylicElementBrush}">
+            <ContentControl prism:RegionManager.RegionName="{x:Bind infra:RegionNames.LogRegion}" />
+        </Border>
+        <Border
+            Margin="10"
+            Padding="10"
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
-            prism:RegionManager.RegionName="{x:Bind infra:RegionNames.ContractRegion}" />
+            Background="{ThemeResource SystemControlAcrylicElementBrush}">
+            <ContentControl prism:RegionManager.RegionName="{x:Bind infra:RegionNames.ContractRegion}" />
+        </Border>
     </Grid>
 </UserControl>

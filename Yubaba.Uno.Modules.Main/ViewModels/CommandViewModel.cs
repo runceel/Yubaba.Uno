@@ -13,24 +13,23 @@ using Yubaba.Uno.Services;
 
 namespace Yubaba.Uno.Modules.Main.ViewModels
 {
-    public class ContractViewModel : IDestructible
+    public class CommandViewModel : IDestructible
     {
         private CompositeDisposable Disposables { get; } = new CompositeDisposable();
-        public AsyncReactiveCommand SubmitCommand { get; }
-        public ReactivePropertySlim<string> SignatureSign { get; } = new ReactivePropertySlim<string>();
+        public AsyncReactiveCommand InitCommand { get; }
         private IYubaba Yubaba { get; }
         private IEventAggregator EventAggregator { get; }
 
-        public ContractViewModel(IYubaba yubaba, IEventAggregator eventAggregator)
+        public CommandViewModel(IYubaba yubaba, IEventAggregator eventAggregator)
         {
             Yubaba = yubaba ?? throw new ArgumentNullException(nameof(yubaba));
             EventAggregator = eventAggregator ?? throw new ArgumentNullException(nameof(eventAggregator));
-            SubmitCommand = new AsyncReactiveCommand()
-                .WithSubscribe(async () => await Yubaba.SubmitContractAsync(new ContractPaper(SignatureSign.Value)))
-                .AddTo(Disposables);
-
-            EventAggregator.GetEvent<ResetEvent>()
-                .Subscribe(() => SignatureSign.Value = "")
+            InitCommand = new AsyncReactiveCommand()
+                .WithSubscribe(async () =>
+                {
+                    await Yubaba.RequestIntroductionAsync();
+                    EventAggregator.GetEvent<ResetEvent>().Publish();
+                })
                 .AddTo(Disposables);
         }
 

@@ -5,11 +5,18 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:Yubaba.Uno.Modules.Main.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:services="using:Yubaba.Uno.Services"
     d:DesignHeight="300"
     d:DesignWidth="400"
     mc:Ignorable="d">
 
-    <Grid>
-        <TextBlock Text="MessagesView" />
+    <Grid Padding="10">
+        <ItemsControl ItemsSource="{x:Bind ViewModel.Messages}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate x:DataType="services:Message">
+                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind Value}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </Grid>
 </UserControl>

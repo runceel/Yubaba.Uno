@@ -10,5 +10,6 @@ namespace Yubaba.Uno.Modules.Main
     {
         public static string MessagesView => nameof(MessagesView);
         public static string ContractView => nameof(ContractView);
+        public static string CommandView => nameof(CommandView);
     }
 }
