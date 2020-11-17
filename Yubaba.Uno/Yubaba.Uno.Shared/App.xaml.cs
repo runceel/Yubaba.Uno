@@ -3,24 +3,10 @@ using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Unity;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.ApplicationModel;
-using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 using Yubaba.Uno.Modules.Main;
 using Yubaba.Uno.Services;
+using Yubaba.Uno.Services.Impl;
 using Yubaba.Uno.ViewModels;
 
 namespace Yubaba.Uno
@@ -46,6 +32,7 @@ namespace Yubaba.Uno
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             // Register services
+            containerRegistry.RegisterSingleton<IRandom, DefaultRandom>();
             containerRegistry.RegisterSingleton<IYubaba, Services.Impl.Yubaba>();
 
             // Register shell
