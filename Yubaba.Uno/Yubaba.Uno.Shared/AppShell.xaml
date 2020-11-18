@@ -7,11 +7,11 @@
     xmlns:local="using:Yubaba.Uno"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="using:Prism.Regions"
-    d:DesignHeight="300"
-    d:DesignWidth="400"
+    d:DesignHeight="590"
+    d:DesignWidth="1118"
     mc:Ignorable="d">
 
-    <Grid>
+    <RelativePanel>
         <Image
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
@@ -20,32 +20,28 @@
         <Border
             Margin="10"
             Padding="10"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            Background="{StaticResource RegionBackgroundBrush}">
+            Background="{StaticResource RegionBackgroundBrush}"
+            RelativePanel.AlignRightWithPanel="True"
+            RelativePanel.AlignTopWithPanel="True">
             <ContentControl prism:RegionManager.RegionName="{x:Bind infra:RegionNames.CommandRegion}" />
         </Border>
         <Border
             Margin="10"
             Padding="10"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
             Background="{StaticResource RegionBackgroundBrush}">
             <ContentControl prism:RegionManager.RegionName="{x:Bind infra:RegionNames.LogRegion}" />
         </Border>
         <Border
+            x:Name="ContractRegion"
             Margin="10"
             Padding="10"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Bottom"
             Background="{StaticResource RegionBackgroundBrush}">
             <ContentControl prism:RegionManager.RegionName="{x:Bind infra:RegionNames.ContractRegion}" />
         </Border>
         <Border
+            x:Name="CreditRegion"
             Margin="10"
             Padding="10"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Bottom"
             Background="{ThemeResource SystemControlAcrylicElementBrush}">
             <TextBlock Foreground="{ThemeResource SystemAccentColorDark3}" Style="{StaticResource BodyTextBlockStyle}">
                 <Run Text="この湯婆婆の画像は" />
@@ -53,5 +49,41 @@
                 <Run Text="で配布されているものを使用しています。" />
             </TextBlock>
         </Border>
-    </Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <!--  幅が 640 以上の時にこの Visual State になる  -->
+                        <AdaptiveTrigger MinWindowWidth="640" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--  クレジットを左下に表示  -->
+                        <Setter Target="CreditRegion.(RelativePanel.AlignLeftWithPanel)" Value="True" />
+                        <Setter Target="CreditRegion.(RelativePanel.AlignRightWithPanel)" Value="False" />
+                        <Setter Target="CreditRegion.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+
+                        <!--  契約書を右下に表示  -->
+                        <Setter Target="ContractRegion.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                        <Setter Target="ContractRegion.(RelativePanel.AlignRightWithPanel)" Value="True" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <!--  640 より小さいとき  -->
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--  クレジット表記を下に幅いっぱいに表示する  -->
+                        <Setter Target="CreditRegion.(RelativePanel.AlignLeftWithPanel)" Value="True" />
+                        <Setter Target="CreditRegion.(RelativePanel.AlignRightWithPanel)" Value="True" />
+                        <Setter Target="CreditRegion.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+
+                        <!--  契約書をクレジット表記の上に右寄せで右寄せで表示する  -->
+                        <Setter Target="ContractRegion.(RelativePanel.Above)" Value="CreditRegion" />
+                        <Setter Target="ContractRegion.(RelativePanel.AlignRightWithPanel)" Value="True" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </RelativePanel>
 </UserControl>
